@@ -30,7 +30,12 @@ Route.group(() => {
 }).prefix('/auth')
 
 Route.group(() => {
+  Route.any('/monitors', 'monitorController.index')
+
+  Route.any('/complete', 'dashboardController.complete')
   Route.get('/', 'dashboardController.index')
-}).prefix('/dashboard')
+})
+  .prefix('/dashboard')
+  .middleware(['auth'])
 
 Route.on('/').render('welcome')
