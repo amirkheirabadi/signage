@@ -27,12 +27,14 @@ Route.group(() => {
   // Social Auth
   Route.get('/social/:provider', 'authController.redirect')
   Route.get('/social/:provider/callback', 'authController.callback')
-}).prefix('/auth')
+})
+  .prefix('/auth')
+  .middleware(['guest'])
 
 Route.group(() => {
   Route.any('/monitors', 'monitorController.index')
 
-  Route.any('/complete', 'dashboardController.complete')
+  Route.any('/complete', 'dashboardController.completeInfo')
   Route.get('/', 'dashboardController.index')
 })
   .prefix('/dashboard')

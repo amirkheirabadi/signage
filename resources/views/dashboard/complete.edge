@@ -1,0 +1,449 @@
+@layout('layouts.dashboard')
+@section('header')
+  <link href="/assets/app/custom/wizard/wizard-v1.default.css" rel="stylesheet" type="text/css" />
+@endsection
+@section('content')
+<div class="kt-portlet">
+  <div class="kt-portlet__body kt-portlet__body--fit">
+    <div class="kt-grid  kt-wizard-v1 kt-wizard-v1--white" id="kt_wizard_v1" data-ktwizard-state="step-first">
+      <div class="kt-grid__item">
+        <!--begin: Form Wizard Nav -->
+        <div class="kt-wizard-v1__nav">
+          <div class="kt-wizard-v1__nav-items">
+            <a class="kt-wizard-v1__nav-item" href="#" data-ktwizard-type="step" data-ktwizard-state="current">
+              <div class="kt-wizard-v1__nav-body">
+                <div class="kt-wizard-v1__nav-icon">
+                  <i class="flaticon-user-ok"></i>
+                </div>
+                <div class="kt-wizard-v1__nav-label">
+                  Persoanl information
+                </div>
+              </div>
+            </a>
+            <a class="kt-wizard-v1__nav-item" href="#" data-ktwizard-type="step">
+              <div class="kt-wizard-v1__nav-body">
+                <div class="kt-wizard-v1__nav-icon">
+                  <i class="flaticon-business"></i>
+                </div>
+                <div class="kt-wizard-v1__nav-label">
+                  Company information
+                </div>
+              </div>
+            </a>
+            <a class="kt-wizard-v1__nav-item" href="#" data-ktwizard-type="step">
+              <div class="kt-wizard-v1__nav-body">
+                <div class="kt-wizard-v1__nav-icon">
+                  <i class="flaticon-piggy-bank"></i>
+                </div>
+                <div class="kt-wizard-v1__nav-label">
+                  Packages
+                </div>
+              </div>
+            </a>
+            <a class="kt-wizard-v1__nav-item" href="#" data-ktwizard-type="step">
+              <div class="kt-wizard-v1__nav-body">
+                <div class="kt-wizard-v1__nav-icon">
+                  <i class="flaticon-tea-cup"></i>
+                </div>
+                <div class="kt-wizard-v1__nav-label">
+                  Finish
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+        <!--end: Form Wizard Nav -->
+      </div>
+      <div class="kt-grid__item kt-grid__item--fluid kt-wizard-v1__wrapper">
+        <!--begin: Form Wizard Form-->
+        <form class="kt-form" id="kt_form">
+          <!--begin: Form Wizard Step 1-->
+          <div class="kt-wizard-v1__content" data-ktwizard-type="step-content" data-ktwizard-state="current">
+            <div class="kt-heading kt-heading--md">Enter your personal information</div>
+            <div class="kt-form__section kt-form__section--first">
+              <div class="kt-wizard-v1__form">
+                <div class="row">
+                  <div class="col-xl-6">
+                    <div class="form-group">
+                      <label>First name</label>
+                      <input type="text" class="form-control" name="first_name" placeholder="First name" value="">
+                    </div>
+                  </div>
+                  <div class="col-xl-6">
+                    <div class="form-group">
+                      <label>Last namt</label>
+                      <input type="text" class="form-control" name="last_name" placeholder="Last name" value="">
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-xl-6">
+                    <div class="form-group">
+                      <label>Mobile</label>
+                      <input type="text" class="form-control" name="mobile" placeholder="Mobile" value="">
+                    </div>
+                  </div>
+                  <div class="col-xl-6">
+                    <div class="form-group">
+                      <label>Country:</label>
+                      <select name="country" class="form-control">
+                        <option value="">Select</option>
+                        <option value="AF">Afghanistan</option>
+                        <option value="AX">Åland Islands</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--end: Form Wizard Step 1-->
+          <!--begin: Form Wizard Step 2-->
+          <div class="kt-wizard-v1__content" data-ktwizard-type="step-content">
+            <div class="kt-heading kt-heading--md">Enter the Details of your Company</div>
+            <div class="kt-form__section kt-form__section--first">
+              <div class="kt-wizard-v1__form">
+                <div class="form-group">
+                  <label>Company name</label>
+                  <input type="text" class="form-control" name="company_name" placeholder="Company name" value="">
+                </div>
+                <div class="row">
+                  <div class="col-xl-6">
+                    <div class="form-group">
+                      <label>Count of employees:</label>
+                      <select name="company_employess" class="form-control">
+                        <option value="C">< 10 employees</option>
+                        <option value="B">< 50 employees</option>
+                        <option value="A">> 50 employees</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="col-xl-6">
+                    <div class="form-group">
+                      <label>Company bussiness:</label>
+                      <select name="company_category" class="form-control">
+                        <option value="it">It & software</option>
+                        <option value="shopping">Shopping</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--end: Form Wizard Step 2-->
+          <!--begin: Form Wizard Step 3-->
+          <div class="kt-wizard-v1__content" data-ktwizard-type="step-content">
+            <div class="kt-heading kt-heading--md">Select your Services</div>
+            <div class="kt-form__section kt-form__section--first">
+              <div class="kt-wizard-v1__form">
+                <div class="form-group">
+                  <label>Delivery Type</label>
+                  <select name="delivery" class="form-control">
+                    <option value="">Select a Service Type Option</option>
+                    <option value="overnight" selected>Overnight Delivery (within 48 hours)</option>
+                    <option value="express">Express Delivery (within 5 working days)</option>
+                    <option value="basic">Basic Delivery (within 5 - 10 working days)</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label>Packaging Type</label>
+                  <select name="packaging" class="form-control">
+                    <option value="">Select a Packaging Type Option</option>
+                    <option value="regular" selected>Regular Packaging</option>
+                    <option value="oversized">Oversized Packaging</option>
+                    <option value="fragile">Fragile Packaging</option>
+                    <option value="frozen">Frozen Packaging</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label>Preferred Delivery Window</label>
+                  <select name="preferreddelivery" class="form-control">
+                    <option value="">Select a Preferred Delivery Option</option>
+                    <option value="morning" selected>Morning Delivery (8:00AM - 11:00AM)</option>
+                    <option value="afternoon">Afternoon Delivery (11:00AM - 3:00PM)</option>
+                    <option value="evening">Evening Delivery (3:00PM - 7:00PM)</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--end: Form Wizard Step 3-->
+          <!--begin: Form Wizard Step 4-->
+          <div class="kt-wizard-v1__content" data-ktwizard-type="step-content">
+            <div class="kt-heading kt-heading--md">Setup Your Delivery Location</div>
+            <div class="kt-form__section kt-form__section--first">
+              <div class="kt-wizard-v1__form">
+                <div class="form-group">
+                  <label>Address Line 1</label>
+                  <input type="text" class="form-control" name="locaddress1" placeholder="Address Line 1" value="Address Line 1">
+                  <span class="form-text text-muted">Please enter your Address.</span>
+                </div>
+                <div class="form-group">
+                  <label>Address Line 2</label>
+                  <input type="text" class="form-control" name="locaddress2" placeholder="Address Line 2" value="Address Line 2">
+                  <span class="form-text text-muted">Please enter your Address.</span>
+                </div>
+                <div class="row">
+                  <div class="col-xl-6">
+                    <div class="form-group">
+                      <label>Postcode</label>
+                      <input type="text" class="form-control" name="locpostcode" placeholder="Postcode" value="3072">
+                      <span class="form-text text-muted">Please enter your Postcode.</span>
+                    </div>
+                  </div>
+                  <div class="col-xl-6">
+                    <div class="form-group">
+                      <label>City</label>
+                      <input type="text" class="form-control" name="loccity" placeholder="City" value="Preston">
+                      <span class="form-text text-muted">Please enter your City.</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-xl-6">
+                    <div class="form-group">
+                      <label>State</label>
+                      <input type="text" class="form-control" name="locstate" placeholder="State" value="VIC">
+                      <span class="form-text text-muted">Please enter your Postcode.</span>
+                    </div>
+                  </div>
+                  <div class="col-xl-6">
+                    <div class="form-group">
+                      <label>Country:</label>
+                      <select name="loccountry" class="form-control">
+                        <option value="">Select</option>
+                        <option value="AF">Afghanistan</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--end: Form Wizard Step 4-->
+          <!--begin: Form Wizard Step 5-->
+          <div class="kt-wizard-v1__content" data-ktwizard-type="step-content">
+            <div class="kt-heading kt-heading--md">Review your Details and Submit</div>
+            <div class="kt-form__section kt-form__section--first">
+              <div class="kt-wizard-v1__review">
+                <div class="kt-wizard-v1__review-item">
+                  <div class="kt-wizard-v1__review-title">
+                    Current Address
+                  </div>
+                  <div class="kt-wizard-v1__review-content">
+                    Address Line 1<br />
+                    Address Line 2<br />
+                    Melbourne 3000, VIC, Australia
+                  </div>
+                </div>
+                <div class="kt-wizard-v1__review-item">
+                  <div class="kt-wizard-v1__review-title">
+                    Delivery Details
+                  </div>
+                  <div class="kt-wizard-v1__review-content">
+                    Package: Complete Workstation (Monitor, Computer, Keyboard & Mouse)<br />
+                    Weight: 25kg<br />
+                    Dimensions: 110cm (w) x 90cm (h) x 150cm (L)
+                  </div>
+                </div>
+                <div class="kt-wizard-v1__review-item">
+                  <div class="kt-wizard-v1__review-title">
+                    Delivery Service Type
+                  </div>
+                  <div class="kt-wizard-v1__review-content">
+                    Overnight Delivery with Regular Packaging<br />
+                    Preferred Morning (8:00AM - 11:00AM) Delivery
+                  </div>
+                </div>
+                <div class="kt-wizard-v1__review-item">
+                  <div class="kt-wizard-v1__review-title">
+                    Delivery Address
+                  </div>
+                  <div class="kt-wizard-v1__review-content">
+                    Address Line 1<br />
+                    Address Line 2<br />
+                    Preston 3072, VIC, Australia
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--end: Form Wizard Step 5-->
+          <!--begin: Form Actions -->
+          <div class="kt-form__actions">
+            <div class="btn btn-secondary btn-md btn-tall btn-wide kt-font-bold kt-font-transform-u" data-ktwizard-type="action-prev">
+              Previous
+            </div>
+            <div class="btn btn-success btn-md btn-tall btn-wide kt-font-bold kt-font-transform-u" data-ktwizard-type="action-submit">
+              Submit
+            </div>
+            <div class="btn btn-brand btn-md btn-tall btn-wide kt-font-bold kt-font-transform-u" data-ktwizard-type="action-next">
+              Next Step
+            </div>
+          </div>
+          <!--end: Form Actions -->
+        </form>
+        <!--end: Form Wizard Form-->
+      </div>
+    </div>
+  </div>
+</div>
+@endsection
+
+@section('footer')
+  <script>
+    // Class definition
+var KTWizard1 = function () {
+  // Base elements
+  var wizardEl;
+  var formEl;
+  var validator;
+  var wizard;
+  // Private functions
+  var initWizard = function () {
+    // Initialize form wizard
+    wizard = new KTWizard('kt_wizard_v1', {
+      startStep: 1
+    });
+
+    // Validation before going to next page
+    wizard.on('beforeNext', function(wizardObj) {
+      if (validator.form() !== true) {
+        wizardObj.stop();  // don't go to the next step
+      }
+    })
+
+    // Change event
+    wizard.on('change', function(wizard) {
+      setTimeout(function() {
+        KTUtil.scrollTop();
+      }, 500);
+    });
+  }
+
+  var initValidation = function() {
+    validator = formEl.validate({
+      // Validate only visible fields
+      ignore: ":hidden",
+
+      // Validation rules
+      rules: {
+        //= Step 1
+        first_name: {
+          required: true
+        },
+        last_name: {
+          required: true
+        },
+        mobile: {
+          required: true
+        },
+        country: {
+          required: true
+        },
+
+        //= Step 2
+        company_name: {
+          required: true
+        },
+        company_employess: {
+          required: true
+        },
+        company_category: {
+          required: true
+        },
+
+        //= Step 3
+        delivery: {
+          required: true
+        },
+        packaging: {
+          required: true
+        },
+        preferreddelivery: {
+          required: true
+        },
+
+        //= Step 4
+        locaddress1: {
+          required: true
+        },
+        locpostcode: {
+          required: true
+        },     
+        loccity: {
+          required: true
+        },   
+        locstate: {
+          required: true
+        },   
+        loccountry: {
+          required: true
+        },  
+      },
+      // Display error
+      invalidHandler: function(event, validator) {
+        KTUtil.scrollTop();
+
+        // swal({
+        //   "title": "",
+        //   "text": "There are some errors in your submission. Please correct them.",
+        //   "type": "error",
+        //   "confirmButtonClass": "btn btn-secondary"
+        // });
+      },
+
+      // Submit valid form
+      submitHandler: function (form) {
+      }
+    });
+  }
+
+  var initSubmit = function() {
+    var btn = formEl.find('[data-ktwizard-type="action-submit"]');
+
+    btn.on('click', function(e) {
+      e.preventDefault();
+
+      if (validator.form()) {
+        // See: src\js\framework\base\app.js
+        KTApp.progress(btn);
+        //KTApp.block(formEl);
+
+        // See: http://malsup.com/jquery/form/#ajaxSubmit
+        formEl.ajaxSubmit({
+          success: function() {
+            KTApp.unprogress(btn);
+            //KTApp.unblock(formEl);
+
+            // swal({
+            //   "title": "", 
+            //   "text": "The application has been successfully submitted!", 
+            //   "type": "success",
+            //   "confirmButtonClass": "btn btn-secondary"
+            // });
+          }
+        });
+      }
+    });
+  }
+
+  return {
+    // public functions
+    init: function() {
+      wizardEl = KTUtil.get('kt_wizard_v1');
+      formEl = $('#kt_form');
+
+      initWizard();
+      initValidation();
+      initSubmit();
+    }
+  };
+}();
+
+jQuery(document).ready(function() {
+  KTWizard1.init();
+});
+  </script>
+@endsection

@@ -15,11 +15,14 @@ class Auth {
       await authenticator.check()
 
       const user = await authenticator.getUser()
+      await user.loadMany(['companies'])
       const companies = await user.getRelated('companies')
-
       request.role = 'user'
 
-      if (!companies.length) {
+      if (
+        !user.complete_information == 'no' &&
+        request.url() != '/dashboard/complete'
+      ) {
         return response.redirect('/dashboard/complete')
       }
     } catch (error) {

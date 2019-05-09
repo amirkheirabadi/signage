@@ -27,6 +27,8 @@ class AuthController {
         email: fbUser.getEmail(),
       }
 
+      console.log(userDetails)
+
       const user = await User.findOrCreate(whereClause, userDetails)
       await auth.login(user)
 
@@ -55,7 +57,6 @@ class AuthController {
       })
       return response.redirect('/auth')
     }
-
     try {
       // check login as user
       await auth
@@ -70,7 +71,7 @@ class AuthController {
       } catch (error) {
         session
           .flash({
-            errors: ['ایمیل و یا رمز عبور اشتباه می باشد .'],
+            errors: ['Email or Password is wrong !'],
           })
           .flashExcept(['password'])
         return response.redirect('back')
