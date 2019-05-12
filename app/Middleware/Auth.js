@@ -20,7 +20,7 @@ class Auth {
       request.role = 'user'
 
       if (
-        !user.complete_information == 'no' &&
+        user.complete_information == 'no' &&
         request.url() != '/dashboard/complete'
       ) {
         return response.redirect('/dashboard/complete')
