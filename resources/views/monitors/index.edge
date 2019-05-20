@@ -144,13 +144,13 @@
 @endsection
 @section('footer')
 <script>
-		var datatable = $('.kt-datatable').KTDatatable({
+		const datatable = $('.kt-datatable').KTDatatable({
 		// datasource definition
 		data: {
 			type: 'remote',
 			source: {
 				read: {
-					url: {{'/dashboard/monitors'}},
+					url: '/dashboard/monitors',
 				},
 			},
 			pageSize: 10, // display 20 records per page

@@ -19,12 +19,12 @@ class Auth {
       const companies = await user.getRelated('companies')
       request.role = 'user'
 
-      if (
-        user.complete_information == 'no' &&
-        request.url() != '/dashboard/complete'
-      ) {
-        return response.redirect('/dashboard/complete')
-      }
+      // if (
+      //   user.complete_information == 'no' &&
+      //   request.url() != '/dashboard/complete'
+      // ) {
+      //   return response.redirect('/dashboard/complete')
+      // }
     } catch (error) {
       // Check login user as admin
       try {

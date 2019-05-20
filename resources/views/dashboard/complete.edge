@@ -243,13 +243,6 @@ var KTWizard1 = function () {
       // Display error
       invalidHandler: function(event, validator) {
         KTUtil.scrollTop();
-
-        // swal({
-        //   "title": "",
-        //   "text": "There are some errors in your submission. Please correct them.",
-        //   "type": "error",
-        //   "confirmButtonClass": "btn btn-secondary"
-        // });
       },
 
       // Submit valid form
@@ -262,31 +255,8 @@ var KTWizard1 = function () {
     var btn = formEl.find('[data-ktwizard-type="action-submit"]');
 
     btn.on('click', function(e) {
-      alert('herer')
-       $('#kt_form').submit()
-      if (validator.form()) {
-        $('#kt_form').submit()
-        // See: src\js\framework\base\app.js
-        // KTApp.progress(btn);
-        // //KTApp.block(formEl);
-
-        // // See: http://malsup.com/jquery/form/#ajaxSubmit
-        // formEl.ajaxSubmit({
-        //   success: function() {
-        //     KTApp.unprogress(btn);
-        //     //KTApp.unblock(formEl);
-
-        //     // swal({
-        //     //   "title": "", 
-        //     //   "text": "The application has been successfully submitted!", 
-        //     //   "type": "success",
-        //     //   "confirmButtonClass": "btn btn-secondary"
-        //     // });
-        //   }
-        // });
-      } else {
-        return false
-      }
+      document.getElementById("kt_form").submit()
+      console.log( $('#kt_form').submit())
     });
   }
 

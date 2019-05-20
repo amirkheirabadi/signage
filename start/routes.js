@@ -32,6 +32,8 @@ Route.group(() => {
   .middleware(['guest'])
 
 Route.group(() => {
+  Route.any('/profile', 'DashboardController.profile')
+
   Route.any('/monitors', 'monitorController.index')
 
   Route.any('/complete', 'dashboardController.completeInfo')

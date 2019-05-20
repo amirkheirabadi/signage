@@ -27,8 +27,6 @@ class AuthController {
         email: fbUser.getEmail(),
       }
 
-      console.log(userDetails)
-
       const user = await User.findOrCreate(whereClause, userDetails)
       await auth.login(user)
 
